@@ -34,7 +34,7 @@ const doCalculate = (event) => {
 - Tailwind;
 - Microsoft Excel to make and compare the calculus.
 
-## Test the project yourself: [Teste the project here!!!](https://water-calculator-react-tailwind.vercel.app/)
+## Test the project yourself: [Teste the project here!!!](https://water-calculator-react-tailwind.vercel.app/){:target="_blank"}
 
 ## Author
 
