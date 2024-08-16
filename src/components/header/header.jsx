@@ -11,11 +11,11 @@ export default function Header() {
     return (
 
         <>
-        <nav className='flex justify-between items-center bg-[#74ccf4] w-full font-bold text-white'>
+        <nav className='flex justify-between items-center bg-[#74ccf4] w-full font-bold text-white font-fontInter'>
             <div>
-                <img src={logo} alt="..." className='w-16'/>
+                <img src={logo} alt="..." className='w-16 pl-5'/>
             </div>
-            <div className={`absolute md:static bg-[#74ccf4] md:min-h-fit min-h-[50vh] left-0 ${menuBurger ? "top-[-100%] transition-all duration-300" : "top-[10%] transition-all duration-300"} md:w-auto w-full flex items-center px-7`}>
+            <div className={`absolute md:static bg-[#74ccf4] md:min-h-fit min-h-[50vh] left-0 ${menuBurger ? "top-[-100%] transition-all duration-300" : "top-[12%] transition-all duration-300"} md:w-auto w-full flex items-center px-7 py-5`}>
                 <ul className='flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8'>
                     <li>
                         <a className='hover:text-gray-500' href="#">Home</a>

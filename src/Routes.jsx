@@ -11,7 +11,7 @@ function AppRoutes() {
     <BrowserRouter>
         <Header />
       <Routes>
-        <Route path='' element={ <Calculate />}/>
+        <Route path='/' element={ <Calculate />}/>
       </Routes>
     </BrowserRouter>
 
