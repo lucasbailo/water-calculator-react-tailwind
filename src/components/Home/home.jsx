@@ -1,0 +1,41 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+export default function Home() {
+
+    const [userName, setUserName] = useState("")
+    const [userEmail, setUserEmail] = useState("")
+
+    const navigate = useNavigate();
+
+    function handleSubmit() {
+        navigate("/water-calc", {state: {username: userName, email: userEmail}})
+    }
+    
+    return (
+        <main className='main-box flex-col items-center justify-start gap-[15vh]'>
+            <div className='flex items-center justify-center h-fit pt-10'>
+                <h1>Welcome to the water calculator!</h1>
+            </div>
+            <div className='div-box'>
+                <form className='form-box' onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="username">Name</label>
+                    </div>
+                    <div className='input-box' required>
+                        <input required type="text" id='username' name='username' placeholder='TYPE YOUR NAME...' className='water-inputs' onChange={(e) => setUserName(e.target.value)}/>
+                    </div>
+                    <div className='mt-5'>
+                        <label htmlFor="email">E-mail</label>
+                    </div>
+                    <div className='input-box'>
+                        <input required type="email" id='email' name='email' placeholder='TYPE YOUR EMAIL...' className='water-inputs' onChange={(e) => setUserEmail(e.target.value)}/>
+                    </div>
+                    <div className='mt-10'>
+                        <button type='submit' className='px-5 py-2 rounded-full bg-blue-500 animate-pulse hover:scale-105 hover:bg-gradient-to-r hover:from-blue-500 hover:to-white font-bold text-gray-900'>Go to calculation</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    )
+}
