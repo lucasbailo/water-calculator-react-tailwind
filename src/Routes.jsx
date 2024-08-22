@@ -1,11 +1,11 @@
-import { BrowserRouter, Routes, Route} from "react-router-dom";
-import Calculate from "./components/calculate/calculate";
-import Header from "./components/header/header";
-import Home from "./components/Home/home";
 import { useState } from "react";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+import Header from "./components/header/header";
 import ToggleTheme from "./components/ToggleTheme/toggle";
-import Protein from "./components/proteinCalc/protein";
+import Home from "./components/Home/home";
+import Calculate from "./components/calculate/calculate";
 import About from "./components/AboutUs/about";
+import Protein from "./components/proteinCalc/protein";
 
 
 function AppRoutes() {
