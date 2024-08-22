@@ -19,7 +19,7 @@
   }
 
   .main-box-bg {
-    @apply bg-gradient-to-t from-[#a6c1ee] to-[#ffffff] dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-400;
+    @apply bg-gradient-to-t from-cyan-100 to-[#74ccf4] dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-400;
   }
 
   .div-box {

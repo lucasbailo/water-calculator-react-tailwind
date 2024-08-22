@@ -1,8 +1,8 @@
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 
 import { useRef, useState } from 'react'
 
-export default function ProteinCalculate() {
+export default function Protein() {
 
     // const {state} = useLocation();
     // const {username, useremail} = state;
@@ -14,9 +14,9 @@ export default function ProteinCalculate() {
 
     console.log(dataGoal)
     
-    const doCalculate = (event) => {
+    const doProteinCalculate = (event) => {
         event.preventDefault() // prevent the submit default action
-        const valueGoal = dataGoal.current.value // saving the age input to use later
+        // const valueGoal = dataGoal.current.value // saving the age input to use later
 
         // Here we're goingo to use this function to define the amount of water in ml for each Kg using the age, and then multiply it for the person's weight
         const defineProteinNeed = () => {
@@ -24,18 +24,18 @@ export default function ProteinCalculate() {
         }
 
         const weight = dataWeight.current.value //colect the person's weight
-        const waterNeed = defineProteinNeed() // creating the variable with the input
+        const proteinNeed = defineProteinNeed() // creating the variable with the input
 
-        const totalWaterNeed = (weight ? ((waterNeed * weight)) : 0) // formula to give the amount of water in liters (ml of water per body kg x person's weight)
+        const totalProteinNeed = (weight ? ((proteinNeed * weight)) : 0) // formula to give the amount of water in liters (ml of water per body kg x person's weight)
 
         // To see if the results and data colected is right
-        console.log('Water need in ml: ' + waterNeed)
-        console.log('Total Water need: ' + totalWaterNeed)
-        console.log('Age: ' + dataGoal.current.value)
+        console.log('Protein need in gr: ' + proteinNeed)
+        console.log('Total Protein need: ' + totalProteinNeed)
+        console.log('Goal: ' + dataGoal.current.value)
         console.log('Weight: ' + dataWeight.current.typeof)
 
-        setResult(totalWaterNeed) // changing the state with the current results to display these information.
-        setGrProtein(waterNeed)
+        setResult(totalProteinNeed) // changing the state with the current results to display these information.
+        setGrProtein(proteinNeed)
     }
 
     return (
@@ -48,13 +48,13 @@ export default function ProteinCalculate() {
                             <label htmlFor="goal">Goal</label>
                         </div>
                         <div className='input-box'>
-                            <input onChange={doCalculate} type="text" id="goal" name='goal' placeholder='TYPE YOUR GOAL...' ref={dataGoal} value="LOSE WEIGHT" className='water-inputs' />
+                            <input onChange={doProteinCalculate} type="text" id="goal" name='goal' placeholder='TYPE YOUR GOAL...' ref={dataGoal} value="LOSE WEIGHT" className='water-inputs' />
                         </div>
                         <div className='mt-5'>
                             <label htmlFor="weight">Weight</label>
                         </div>
                         <div className='input-box'>
-                            <input onChange={doCalculate} type="number" id='weight' name='weight' placeholder='TYPE YOUT WEIGHT...' ref={dataWeight} className='water-inputs' />
+                            <input onChange={doProteinCalculate} type="number" id='weight' name='weight' placeholder='TYPE YOUT WEIGHT...' ref={dataWeight} className='water-inputs' />
                         </div>
                     </form>
                 </div>
@@ -84,6 +84,3 @@ export default function ProteinCalculate() {
         </main>
     )
 }
-
-// https://www.researchgate.net/publication/303535135_A_fuzzy_recommendation_system_for_daily_water_intake
-// https://www.tuasaude.com/beber-agua/
