@@ -13,7 +13,7 @@ export default function Home() {
     }
     
     return (
-        <main className='main-box flex-col items-center justify-start gap-[15vh]'>
+        <main className='main-box flex-col items-center justify-start gap-[15vh] main-box-bg'>
             <div className='flex items-center justify-center h-fit pt-10'>
                 <h1>Welcome to the water calculator!</h1>
             </div>
@@ -32,7 +32,7 @@ export default function Home() {
                         <input required type="email" id='email' name='email' placeholder='TYPE YOUR EMAIL...' className='water-inputs' onChange={(e) => setUserEmail(e.target.value)}/>
                     </div>
                     <div className='mt-10'>
-                        <button type='submit' className='px-5 py-2 rounded-full bg-blue-500 animate-pulse hover:scale-105 hover:bg-gradient-to-r hover:from-blue-500 hover:to-white font-bold text-gray-900'>Go to calculation</button>
+                        <button type='submit' className='water-button'>Go to calculation</button>
                     </div>
                 </form>
             </div>

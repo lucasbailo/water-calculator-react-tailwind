@@ -65,11 +65,11 @@ export default function Calculate() {
     }
 
     return (
-        <main className='main-box flex-col items-center'>
+        <main className='main-box flex-col items-center main-box-bg'>
             <div className='flex items-center justify-center h-fit pt-10'>
                 <h1>Hello, {username}</h1>
             </div>
-            <div className='main-box bg-none'>
+            <div className='main-box'>
                 <div className='div-box'>
                     <form action="" className='form-box'>
                         <div>

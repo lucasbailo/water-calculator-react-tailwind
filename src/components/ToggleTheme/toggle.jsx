@@ -1,5 +1,5 @@
-import MoonIcon from "../images/sunnyIcon.svg"
-import SunIcon from "../images/moon.svg"
+import MoonIcon from "../images/sunny-outline.svg"
+import SunIcon from "../images/moon-outline.svg"
 import { useEffect } from "react"
 
 export default function ToggleTheme() {
@@ -14,8 +14,8 @@ export default function ToggleTheme() {
     const toggle = () => {
         pageClasses.toggle('dark')
     }
-    return <div className="hidden sm:block">
-        <img src={MoonIcon} alt="" className="h-8 text-gray-100 hidden dark:block cursor-pointer" onClick={toggle} />
-        <img src={SunIcon} alt="" className="h-8 text-gray-100 block dark:hidden cursor-pointer" onClick={toggle} />
+    return <div className="flex absolute items-end justify-end top-2 md:top-6 right-2">
+        <img src={MoonIcon} alt="" className="h-6 md:h-7 hidden dark:block cursor-pointer" onClick={toggle} />
+        <img src={SunIcon} alt="" className="h-6 md:h-7 block dark:hidden cursor-pointer" onClick={toggle} />
     </div>
 }

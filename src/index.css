@@ -6,8 +6,20 @@
 
 @layer components {
 
+  .header-style{
+    @apply flex justify-between items-center bg-[#74ccf4] dark:bg-slate-600 w-full font-bold text-white dark:text-slate-100 font-fontInter;
+  }
+
+  .header-links {
+    @apply hover:text-gray-500 dark:hover:text-slate-400;
+  }
+
   .main-box {
-    @apply bg-gradient-to-t from-[#a6c1ee] to-[#ffffff] w-svw dark:bg-slate-400 border-collapse h-svh min-h-screen flex flex-col items-center md:items-start md:justify-evenly md:flex-row font-fontInter gap-[5vh];
+    @apply w-full border-collapse h-svh flex flex-col items-center md:items-start md:justify-evenly md:flex-row font-fontInter gap-[5vh];
+  }
+
+  .main-box-bg {
+    @apply bg-gradient-to-t from-[#a6c1ee] to-[#ffffff] dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-400;
   }
 
   .div-box {
@@ -23,15 +35,19 @@
   }
 
   .water-inputs {
-    @apply bg-blue-300 rounded-full p-2 placeholder:text-cyan-100 text-2xl font-bold text-blue-950 outline-blue-700 text-center w-full placeholder:text-sm;
+    @apply bg-blue-300 placeholder:text-cyan-100 dark:placeholder:text-slate-600 dark:bg-slate-400 rounded-full p-2 text-2xl font-bold text-blue-950 outline-blue-700 text-center w-full placeholder:text-sm;
   }
 
   .water-display {
-    @apply border-none px-5 py-2 bg-blue-300 rounded-md text-2xl text-blue-950 font-bold;
+    @apply border-none px-5 py-2 bg-blue-300 rounded-md text-2xl text-blue-950 font-bold dark:bg-slate-400;
   }
 
   .display-box {
-    @apply flex flex-col items-center gap-2 md:w-full;
+    @apply flex flex-col items-center gap-2 md:w-full md:pr-12;
+  }
+
+  .water-button {
+    @apply px-5 py-2 rounded-full bg-blue-500 dark:bg-slate-900 animate-bounce hover:bg-gradient-to-r hover:from-blue-500 hover:to-white dark:hover:from-slate-900 dark:hover:to-gray-500 font-bold text-gray-900 dark:text-gray-300;
   }
 
 

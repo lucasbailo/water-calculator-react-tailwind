@@ -4,6 +4,7 @@ import Header from "./components/header/header";
 import Home from "./components/Home/home";
 import { useState } from "react";
 import AboutUs from "./components/AboutUs/aboutUs";
+import ToggleTheme from "./components/ToggleTheme/toggle";
 
 
 function AppRoutes() {
@@ -13,6 +14,7 @@ function AppRoutes() {
     
     <BrowserRouter>
         <Header />
+        <ToggleTheme />
       <Routes>
         <Route path='/' element={ <Home onSubmit={setUser} />}/>
         <Route path='/water-calc' element={ <Calculate user={user} />}/>
