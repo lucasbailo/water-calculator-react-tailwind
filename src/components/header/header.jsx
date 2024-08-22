@@ -14,7 +14,7 @@ export default function Header() {
             <div>
                 <img src={logo} alt="..." className='w-16 md:w-24 pl-5' />
             </div>
-            <div className={`absolute md:static md:min-h-fit min-h-[50vh] left-0 ${menuBurger ? "top-[-100%] transition-all duration-300" : "top-[6%] md:top-[12%] transition-all duration-300"} md:w-auto w-full flex items-center px-7 py-5`}>
+            <div className={`absolute md:static md:min-h-fit min-h-[50vh] left-0 ${menuBurger ? "top-[-100%] transition-all duration-300" : "top-[6%] md:top-[12%] transition-all duration-300 bg-[#74ccf4] dark:bg-slate-600"} md:w-auto w-full flex items-center px-7 py-5`}>
                 <ul className='flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8'>
                     <li>
                         <a className='header-links' href="/">Home</a>
@@ -26,7 +26,7 @@ export default function Header() {
                         <a className='header-links' href="#">Contact</a>
                     </li>
                     <li>
-                        <a className='header-links' href="#">Protein Calculator - Soon...</a>
+                        <a className='header-links' href="/protein-cal">Protein Calculator - Soon...</a>
                     </li>
                 </ul>
             </div>

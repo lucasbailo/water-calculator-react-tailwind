@@ -15,7 +15,7 @@
   }
 
   .main-box {
-    @apply w-full border-collapse h-svh flex flex-col items-center md:items-start md:justify-evenly md:flex-row font-fontInter gap-[5vh];
+    @apply w-full border-collapse h-svh flex flex-col items-center md:items-start md:justify-evenly md:flex-row font-fontInter gap-[5vh] text-xl font-bold;
   }
 
   .main-box-bg {
