@@ -7,20 +7,32 @@ export default function Protein() {
     // const {state} = useLocation();
     // const {username, useremail} = state;
 
-    const dataGoal = useRef("Lose Weight");
+    const [dataGoal,setDataGoal]  = useState("");
     const dataWeight = useRef(0);
     const [result, setResult] = useState(0)
     const [grProtein, setGrProtein] = useState(0)
 
-    console.log(dataGoal)
+
+    // Average person: Recommended intake is about 0.8 grams per kilograms for most adults. (1 kg = 2.2 pounds)
+    // Person with diabetes: Protein intake for a person with diabetes is also about 0.8 grams.
+    // Build muscle: Recommended intake is 1-1.5 grams per kilogram. Adding more protein to your diet than this won’t help with muscle growth.
+    // Weight loss: Recommended intake is 1-1.2 grams per kilogram.
     
     const doProteinCalculate = (event) => {
-        event.preventDefault() // prevent the submit default action
+        // event.preventDefault() // prevent the submit default action
         // const valueGoal = dataGoal.current.value // saving the age input to use later
 
         // Here we're goingo to use this function to define the amount of water in ml for each Kg using the age, and then multiply it for the person's weight
         const defineProteinNeed = () => {
-           return 0.8
+           if ( dataGoal === "" ) {
+            return "";
+           } else if ( dataGoal == "Average person" || dataGoal == "Person with diabetes" ) {
+            return 0.8;
+           } else if ( dataGoal == "Build muscle" ) {
+            return 1.5;
+           } else if ( dataGoal == "Weight loss" ) {
+            return 1.2;
+           }
         }
 
         const weight = dataWeight.current.value //colect the person's weight
@@ -31,7 +43,7 @@ export default function Protein() {
         // To see if the results and data colected is right
         console.log('Protein need in gr: ' + proteinNeed)
         console.log('Total Protein need: ' + totalProteinNeed)
-        console.log('Goal: ' + dataGoal.current.value)
+        console.log('Goal: ' + dataGoal.current)
         console.log('Weight: ' + dataWeight.current.typeof)
 
         setResult(totalProteinNeed) // changing the state with the current results to display these information.
@@ -44,14 +56,37 @@ export default function Protein() {
             <div className='main-box'>
                 <div className='div-box'>
                     <form action="" className='form-box'>
-                        <div>
-                            <label htmlFor="goal">Goal</label>
-                        </div>
-                        <div className='input-box'>
-                            <input onChange={doProteinCalculate} type="text" id="goal" name='goal' placeholder='TYPE YOUR GOAL...' ref={dataGoal} value="LOSE WEIGHT" className='water-inputs' />
+                        <div className='flex flex-col gap-2 bg-blue-300 p-3 rounded-md shadow-2xl'>
+                            <div className=''>
+                                <h1>Select your goal:</h1>
+                            </div>
+                            <div className='flex gap-3'>
+                                <input type="radio" id="average" name="goal" value="Average person" onChange={e => {
+                                    setDataGoal(e.target.value) 
+                                    doProteinCalculate()}} />
+                                <label htmlFor="average">Average person</label>
+                            </div>
+                            <div className='flex gap-3'>
+                                <input type="radio" id="diabetes" name="goal" value="Person with diabetes" onChange={e => {
+                                    setDataGoal(e.target.value)
+                                    doProteinCalculate()}} /> 
+                                <label htmlFor="diabetes">Person with diabetes</label>
+                            </div>
+                            <div className='flex gap-3'>
+                                <input type="radio" id="build" name="goal" value="Build muscle" onChange={e => {
+                                    setDataGoal(e.target.value)
+                                    doProteinCalculate()}} />
+                                <label htmlFor="build">Build muscle</label>
+                            </div>
+                            <div className='flex gap-3'>
+                                <input type="radio" id="loss" name="goal" value="Weight loss" onChange={e => {
+                                    setDataGoal(e.target.value)
+                                    doProteinCalculate()}} />
+                                <label htmlFor="loss">Weight loss</label>
+                            </div>
                         </div>
                         <div className='mt-5'>
-                            <label htmlFor="weight">Weight</label>
+                            <label htmlFor="weight">Weight (in Kg)</label>
                         </div>
                         <div className='input-box'>
                             <input onChange={doProteinCalculate} type="number" id='weight' name='weight' placeholder='TYPE YOUT WEIGHT...' ref={dataWeight} className='water-inputs' />
@@ -59,7 +94,7 @@ export default function Protein() {
                     </form>
                 </div>
                 <div className='div-box'>
-                    { dataGoal.current.value === "" || dataGoal.current === 0 ?
+                    { dataGoal.current === "" || dataGoal.current === 0 ?
                         <div> </div>
                         :
                         <div className='display-box'>
@@ -84,3 +119,6 @@ export default function Protein() {
         </main>
     )
 }
+
+
+// https://www.unitypoint.org/news-and-articles/how-much-protein-do-you-need-daily-ideal-protein-intake-for-muscle-growth-weight-loss-and-managing-chronic-conditions
