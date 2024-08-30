@@ -8,7 +8,6 @@ export default function Protein() {
     // const {username, useremail} = state;
 
     const [dataGoal,setDataGoal]  = useState("");
-    console.log("Fora: " + dataGoal)
     const dataWeight = useRef(0);
     const [result, setResult] = useState(0)
     const [grProtein, setGrProtein] = useState(0)
@@ -100,9 +99,14 @@ export default function Protein() {
                         </div>
                     </form>
                 </div>
-                <div className='div-box'>
-                    { dataGoal.current === "" || dataGoal.current === 0 ?
-                        <div> </div>
+                <div className='div-box h-full'>
+                    { dataGoal == "" || dataGoal.current === 0 ?
+                        <div class='flex space-x-2 justify-center items-center dark:invert h-1/2'>
+                            <span>Loading</span>
+                            <div class='h-4 w-4 bg-black rounded-full animate-bounce [animation-delay:-0.3s]'></div>
+                            <div class='h-4 w-4 bg-black rounded-full animate-bounce [animation-delay:-0.15s]'></div>
+                            <div class='h-4 w-4 bg-black rounded-full animate-bounce'></div>
+                        </div>
                         :
                         <div className='display-box'>
                             <span>You will need </span>
@@ -110,10 +114,14 @@ export default function Protein() {
                             <span>gr of protein per Kg</span>
                         </div>
                     }
-                    <div></div>
                     {
                         dataWeight.current.value === "" || dataWeight.current === 0 || dataWeight.current.value == "" ?
-                        <div> </div>
+                        <div class='flex space-x-2 justify-center items-center dark:invert h-1/2'>
+                            <span>Loading</span>
+                            <div class='h-4 w-4 bg-black rounded-full animate-bounce [animation-delay:-0.3s]'></div>
+                            <div class='h-4 w-4 bg-black rounded-full animate-bounce [animation-delay:-0.15s]'></div>
+                            <div class='h-4 w-4 bg-black rounded-full animate-bounce'></div>
+                        </div>
                         :
                         <div className='display-box'>
                             <span>Or,</span>
