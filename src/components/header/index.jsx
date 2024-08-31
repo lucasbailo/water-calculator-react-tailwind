@@ -25,9 +25,6 @@ export default function Header() {
                     <li>
                         <a className='header-links' href="#">Contact</a>
                     </li>
-                    <li>
-                        <a className='header-links' href="/protein-cal">Protein Calculator - Soon...</a>
-                    </li>
                 </ul>
             </div>
             <div className="cursor-pointer md:hidden pr-12" onClick={() => setMenuBurger((curr) => !curr)}>

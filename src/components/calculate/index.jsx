@@ -11,8 +11,6 @@ export default function Calculate() {
     const dataWeight = useRef(0);
     const [result, setResult] = useState(0)
     const [mlWater, setMlWater] = useState(0)
-
-    console.log(dataAge)
     
     const doCalculate = (event) => {
         event.preventDefault() // prevent the submit default action
@@ -67,7 +65,7 @@ export default function Calculate() {
     return (
         <main className='main-box flex-col items-center main-box-bg'>
             <div className='flex items-center justify-center h-fit pt-10'>
-                <h1>Hello, {username}</h1>
+                <h1>Hello, {username}!</h1>
             </div>
             <div className='main-box'>
                 <div className='div-box'>

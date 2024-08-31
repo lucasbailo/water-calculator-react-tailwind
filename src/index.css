@@ -47,9 +47,15 @@
   }
 
   .water-button {
-    @apply px-5 py-2 rounded-full bg-blue-500 dark:bg-slate-900 animate-bounce hover:bg-gradient-to-r hover:from-blue-500 hover:to-white dark:hover:from-slate-900 dark:hover:to-gray-500 font-bold text-gray-900 dark:text-gray-300;
+    @apply px-5 py-2 rounded-full bg-blue-500 dark:bg-slate-900 animate-bounce hover:bg-blue-400 dark:hover:bg-slate-800 font-bold text-white dark:text-gray-300;
   }
 
+  .radio-style {
+    @apply w-4 h-4;
+  }
 
+  .radio-box {
+    @apply flex gap-3 items-center;
+  }
 
 }

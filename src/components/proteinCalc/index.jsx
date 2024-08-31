@@ -1,11 +1,11 @@
-// import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import { useEffect, useRef, useState } from 'react'
 
 export default function Protein() {
 
-    // const {state} = useLocation();
-    // const {username, useremail} = state;
+    const {state} = useLocation();
+    const {username, useremail} = state;
 
     const [dataGoal,setDataGoal]  = useState("");
     const dataWeight = useRef(0);
@@ -36,7 +36,6 @@ export default function Protein() {
 
     const mudarTudo = (e) => {
         setDataGoal(e.target.value)
-        console.log("Dentro: " + dataGoal)
     }
     
     
@@ -46,7 +45,7 @@ export default function Protein() {
         
         const weight = dataWeight.current.value //colect the person's weight
         
-        const totalProteinNeed = (weight ? ((proteinNeed * weight)) : 0) // formula to give the amount of water in liters (ml of water per body kg x person's weight)
+        const totalProteinNeed = (weight ? (proteinNeed * weight).toFixed(2) : 0) // formula to give the amount of water in liters (ml of water per body kg x person's weight)
         
         // To see if the results and data colected is right
         console.log('Protein need in gr: ' + proteinNeed)
@@ -66,29 +65,29 @@ export default function Protein() {
     
     return (
         <main className='main-box flex-col items-center main-box-bg'>
-            <div><h1 className='pt-10'>👷‍♂️💻I'M STILL WORKING ON THIS ONE...💻👷‍♂️</h1></div>
+            <div><h1 className='flex items-center justify-center h-fit pt-10'>Hello, {username}!</h1></div>
             <div className='main-box'>
                 <div className='div-box'>
                     <form action="" className='form-box'>
-                        <div className='flex flex-col gap-2 bg-blue-300 p-3 rounded-md shadow-2xl'>
-                            <div className=''>
-                                <h1>Select your goal:</h1>
-                            </div>
-                            <div className='flex gap-3'>
+                        <div className=''>
+                            <h1>Select your goal:</h1>
+                        </div>
+                        <div className='flex flex-col gap-2 bg-blue-300 dark:bg-slate-400 p-3 rounded-md shadow-2xl'>
+                            <div className='radio-box'>
                                 <label htmlFor="average">Average person</label>
-                                <input type="radio" id="average" name="goal" value="Average person" onChange={mudarTudo} />
+                                <input type="radio" id="average" name="goal" value="Average person" className='radio-style' onChange={mudarTudo} />
                             </div>
-                            <div className='flex gap-3'>
+                            <div className='radio-box'>
                                 <label htmlFor="diabetes">Person with diabetes</label>
-                                <input type="radio" id="diabetes" name="goal" value="Person with diabetes" onChange={mudarTudo} /> 
+                                <input type="radio" id="diabetes" name="goal" value="Person with diabetes" className='radio-style' onChange={mudarTudo} /> 
                             </div>
-                            <div className='flex gap-3'>
+                            <div className='radio-box'>
                                 <label htmlFor="build">Build muscle</label>
-                                <input type="radio" id="build" name="goal" value="Build muscle" onChange={mudarTudo} />
+                                <input type="radio" id="build" name="goal" value="Build muscle" className='radio-style' onChange={mudarTudo} />
                             </div>
-                            <div className='flex gap-3'>
+                            <div className='radio-box'>
                                 <label htmlFor="loss">Weight loss</label>
-                                <input type="radio" id="loss" name="goal" value="Weight loss" onChange={mudarTudo} />
+                                <input type="radio" id="loss" name="goal" value="Weight loss" className='radio-style' onChange={mudarTudo} />
                             </div>
                         </div>
                         <div className='mt-5'>
@@ -101,11 +100,11 @@ export default function Protein() {
                 </div>
                 <div className='div-box h-full'>
                     { dataGoal == "" || dataGoal.current === 0 ?
-                        <div class='flex space-x-2 justify-center items-center dark:invert h-1/2'>
-                            <span>Loading</span>
-                            <div class='h-4 w-4 bg-black rounded-full animate-bounce [animation-delay:-0.3s]'></div>
-                            <div class='h-4 w-4 bg-black rounded-full animate-bounce [animation-delay:-0.15s]'></div>
-                            <div class='h-4 w-4 bg-black rounded-full animate-bounce'></div>
+                        <div className='flex space-x-2 justify-center items-center h-1/2'>
+                            <span>Select your Goal</span>
+                            <div className='h-2 w-2 bg-black rounded-full animate-bounce [animation-delay:-0.3s]'></div>
+                            <div className='h-2 w-2 bg-black rounded-full animate-bounce [animation-delay:-0.15s]'></div>
+                            <div className='h-2 w-2 bg-black rounded-full animate-bounce'></div>
                         </div>
                         :
                         <div className='display-box'>
@@ -115,12 +114,15 @@ export default function Protein() {
                         </div>
                     }
                     {
+                        dataGoal == "" ?
+                        <div> </div>
+                        :
                         dataWeight.current.value === "" || dataWeight.current === 0 || dataWeight.current.value == "" ?
-                        <div class='flex space-x-2 justify-center items-center dark:invert h-1/2'>
-                            <span>Loading</span>
-                            <div class='h-4 w-4 bg-black rounded-full animate-bounce [animation-delay:-0.3s]'></div>
-                            <div class='h-4 w-4 bg-black rounded-full animate-bounce [animation-delay:-0.15s]'></div>
-                            <div class='h-4 w-4 bg-black rounded-full animate-bounce'></div>
+                        <div className='flex space-x-2 justify-center items-center h-1/2'>
+                            <span>Type Your Weight</span>
+                            <div className='h-2 w-2 bg-black rounded-full animate-bounce [animation-delay:-0.3s]'></div>
+                            <div className='h-2 w-2 bg-black rounded-full animate-bounce [animation-delay:-0.15s]'></div>
+                            <div className='h-2 w-2 bg-black rounded-full animate-bounce'></div>
                         </div>
                         :
                         <div className='display-box'>
@@ -129,6 +131,7 @@ export default function Protein() {
                             <span>Grams of protein per day</span>
                         </div>
                     }
+
                 </div>
             </div>
         </main>

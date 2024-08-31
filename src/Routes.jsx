@@ -20,7 +20,7 @@ function AppRoutes() {
         <Route path='/' element={ <Home onSubmit={setUser} />}/>
         <Route path='/water-calc' element={ <Calculate user={user} />}/>
         <Route path='/about-us' element={ <About/>}/>
-        <Route path="/protein-cal" element={ <Protein /> } />
+        <Route path="/protein-cal" element={ <Protein user={user} /> } />
       </Routes>
     </BrowserRouter>
 
