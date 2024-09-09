@@ -2,6 +2,8 @@
 
 # Vite + React Project
 
+## Test the project yourself: [Teste the project here!!!](https://water-calculator-react-tailwind.vercel.app/)
+
 ### Home Page
 - Calculate Page.
 
@@ -34,11 +36,14 @@ const doCalculate = (event) => {
 - Tailwind;
 - Microsoft Excel to make and compare the calculus.
 
-## Test the project yourself: [Teste the project here!!!](https://water-calculator-react-tailwind.vercel.app/)
-
 ## Author
 
 - Website - [My GitHub](https://github.com/lucasbailo)
 - Frontend Mentor - [@lucasbailo](https://www.frontendmentor.io/profile/lucasbailo)
 - Instagram - [@lucassbailo](https://www.instagram.com/lucassbailo/)
 - LinkedIn - [Lucas Bailo](https://www.linkedin.com/in/lcsbailo)
+
+## References
+- https://www.researchgate.net/publication/303535135_A_fuzzy_recommendation_system_for_daily_water_intake
+- https://www.tuasaude.com/beber-agua/
+- https://www.unitypoint.org/news-and-articles/how-much-protein-do-you-need-daily-ideal-protein-intake-for-muscle-growth-weight-loss-and-managing-chronic-conditions
