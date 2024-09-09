@@ -11,15 +11,15 @@
   }
 
   .header-links {
-    @apply hover:text-gray-500 dark:hover:text-slate-400;
+    @apply hover:text-gray-500 dark:hover:text-slate-400 text-black dark:text-white;
   }
 
   .main-box {
-    @apply w-full border-collapse h-svh flex flex-col items-center md:items-start md:justify-evenly md:flex-row font-fontInter gap-[5vh] text-xl font-bold;
+    @apply w-full border-collapse h-full flex flex-col items-center md:items-start md:justify-evenly md:flex-row font-fontInter gap-[5vh] text-xl font-bold;
   }
 
   .main-box-bg {
-    @apply bg-gradient-to-t from-cyan-100 to-[#74ccf4] dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-400;
+    @apply bg-gradient-to-t from-[#74ccf4] to-cyan-100 dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-400;
   }
 
   .div-box {

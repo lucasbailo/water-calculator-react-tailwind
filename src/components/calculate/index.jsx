@@ -20,23 +20,17 @@ export default function Calculate() {
         const defineWaterNeed = () => {
             if (valueAge == "" || valueAge === 0) {
                 return 0;
-            }
-            else if (0 <= valueAge && valueAge <= 1) {
+            } else if (0 <= valueAge && valueAge <= 1) {
                 return 140;
-            }
-            else if (2 <= valueAge && valueAge <= 3) {
+            } else if (2 <= valueAge && valueAge <= 3) {
                 return 120;
-            }
-            else if (4 <= valueAge && valueAge <= 7) {
+            } else if (4 <= valueAge && valueAge <= 7) {
                 return 95;
-            }
-            else if (8 <= valueAge && valueAge <= 9) {
+            } else if (8 <= valueAge && valueAge <= 9) {
                 return 85;
-            }
-            else if (10 <= valueAge && valueAge <= 14) {
+            } else if (10 <= valueAge && valueAge <= 14) {
                 return 65;
-            }
-            else if (15 <= valueAge && valueAge <= 17) {
+            } else if (15 <= valueAge && valueAge <= 17) {
                 return 40;
             } else if (18 <= valueAge && valueAge < 55) {
                 return 35;
@@ -63,7 +57,7 @@ export default function Calculate() {
     }
 
     return (
-        <main className='main-box flex-col items-center main-box-bg'>
+        <main className='main-box flex-col items-center main-box-bg h-svh'>
             <div className='flex items-center justify-center h-fit pt-10'>
                 <h1>Hello, {username}!</h1>
             </div>

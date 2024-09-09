@@ -62,9 +62,8 @@ export default function Protein() {
     }, [dataGoal]
     )
     
-    
     return (
-        <main className='main-box flex-col items-center main-box-bg'>
+        <main className='main-box flex-col items-center main-box-bg h-svh'>
             <div><h1 className='flex items-center justify-center h-fit pt-10'>Hello, {username}!</h1></div>
             <div className='main-box'>
                 <div className='div-box'>
@@ -131,7 +130,6 @@ export default function Protein() {
                             <span>Grams of protein per day</span>
                         </div>
                     }
-
                 </div>
             </div>
         </main>

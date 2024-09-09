@@ -18,7 +18,7 @@ export default function Home() {
     }
 
     return (
-        <main className='main-box flex-col items-center justify-start gap-[15vh] main-box-bg'>
+        <main className='main-box flex-col items-center justify-start gap-[15vh] main-box-bg h-svh'>
             <div className='flex items-center justify-center h-fit pt-10'>
                 <h1>Welcome to the water calculator!</h1>
             </div>

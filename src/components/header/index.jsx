@@ -28,8 +28,10 @@ export default function Header() {
                 </ul>
             </div>
             <div className="cursor-pointer md:hidden pr-12" onClick={() => setMenuBurger((curr) => !curr)}>
-                {menuBurger ? <img src={MenuOpen} alt='...' className='w-8' /> : <img src={MenuClose} alt='...' className='w-8' />}
+                {menuBurger ? <img src={MenuOpen} alt='...' className='w-8'/> : <img src={MenuClose} alt='...' className='w-8' />}
             </div>
+            
+
             <div className='md:block hidden'></div>
         </nav>
     )
